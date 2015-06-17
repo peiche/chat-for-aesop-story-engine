@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  *	Draws the shorcode component used for Aesop Story Engine
@@ -9,8 +8,8 @@
 class chatComponentSC {
 
 	// the shortcode HAS to start with aesop_
-	function __construct(){
-		add_shortcode('aesop_chat', 			array($this, 'shortcode') );
+	function __construct() {
+		add_shortcode( 'aesop_chat',   array( $this, 'shortcode' ) );
 	}
 
 	/**
@@ -19,7 +18,7 @@ class chatComponentSC {
 	 *
 	 *
 	 */
-	function shortcode($atts, $content = null) {
+	function shortcode( $atts, $content = null ) {
 
 		$defaults = array(
             'style'         => '',
@@ -33,12 +32,12 @@ class chatComponentSC {
             'avatar_style'  => '',
 		);
 
-		$atts 	= shortcode_atts($defaults, $atts);
+		$atts 	= shortcode_atts( $defaults, $atts );
 
 		// account for multiple instances of this component
 		static $instance = 0;
 		$instance++;
-		$unique = sprintf('chat-shortcode-%s-%s',get_the_ID(), $instance);
+		$unique = sprintf( 'chat-shortcode-%s-%s', get_the_ID(), $instance );
 
 		// example of getting an option value
 		$style          = $atts[ 'style' ];
@@ -55,12 +54,12 @@ class chatComponentSC {
 
 		// if lasso is active we need to map the sc atts as data-attributes
 		if ( class_exists( 'lasso_autoloader' ) && ( function_exists('lasso_user_can') && lasso_user_can() ) ) {
-			$options = function_exists('aesop_component_data_atts') ? aesop_component_data_atts('chat', $unique, $atts) : false;
+			$options = function_exists( 'aesop_component_data_atts' ) ? aesop_component_data_atts( 'chat', $unique, $atts ) : false;
 		} else {
 			$options = false;
 		}
 
-		$out = sprintf('<div id="%s" %s class="aesop-component aesop-component-chat %s %s" style="background-color: %s;"><div class="aesop-component-chat-container clearfix" style="max-width: %spx; text-align: %s;"><p class="aesop-component-chat-bubble aesop-component-chat-direction-%s" style="background-color: %s; color: %s;"><span class="aesop-component-chat-bubble-arrow" style="border-color: %s;"></span>%s</p><div class="aesop-component-chat-avatar %s" style="background-image: url(\'%s\');"></div></div></div>', $unique, $options, $style, $has_avatar, $bg, $width, $dir, $dir, $bubble, $text, $bubble, $content, $avatar_style, $avatar);
+		$out = sprintf( '<div id="%s" %s class="aesop-component aesop-component-chat %s %s" style="background-color: %s;"><div class="aesop-component-chat-container clearfix" style="max-width: %spx; text-align: %s;"><p class="aesop-component-chat-bubble aesop-component-chat-direction-%s" style="background-color: %s; color: %s;"><span class="aesop-component-chat-bubble-arrow" style="border-color: %s;"></span>%s</p><div class="aesop-component-chat-avatar %s" style="background-image: url(\'%s\');"></div></div></div>', $unique, $options, $style, $has_avatar, $bg, $width, $dir, $dir, $bubble, $text, $bubble, $content, $avatar_style, $avatar );
 
 		return $out;
 	}

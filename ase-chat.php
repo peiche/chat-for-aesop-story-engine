@@ -1,10 +1,9 @@
 <?php
-
 /**
  * Plugin Name: Chat for Aesop Story Engine
  * Stylized conversation content driven by Aesop Story Engine.
  *
- * @package   Lasso
+ * @package   Chat for Aesop Story Engine
  * @author    Paul Eiche <peiche@gmail.com>
  * @link      http://eichefam.net/projects/ase-chat
  *

@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  *	This class is responsible for creating custom options used by both Aesop Story Engine and Lasso
@@ -7,27 +6,30 @@
  */
 class chatComponentSettings {
 
-	function __construct(){
+    /**
+     * Add the options for Lasso (frontend) and Aesop Story Engine (backend)
+     */
+	function __construct() {
 
 		// if you arent using Lasso then this filter isnt needed
-		add_filter('lasso_custom_options',		array($this,'options'));
+		add_filter( 'lasso_custom_options',   array( $this, 'options' ) );
 
 		// if you arent using aesop story engine then this filter isnt needed
-		add_filter('aesop_avail_components',	array($this, 'options') );
+		add_filter( 'aesop_avail_components', array( $this, 'options' ) );
 	}
 	/**
 	 *
 	 *	This adds our options into the generator for both Lasso and Aesop Story Engine
 	 *
 	 */
-	function options($shortcodes) {
+	function options( $shortcodes ) {
 
 		$custom = array(
 			'chat' 						=> array(
 				'name' 					=> 'Chat Component',
 				'type' 					=> 'single',
 				'atts' 					=> array(
-					'style'   		=> array(
+					'style'   		    => array(
 						'type'			=> 'select',
 						'values' 		=> array(
 							array(
@@ -55,33 +57,32 @@ class chatComponentSettings {
 						'desc' 			=> 'Appearance',
 						'tip'			=> 'The style of the chat bubble.',
 					),
-                    'width' 		=> array(
+                    'width' 		    => array(
 						'type'			=> 'text_small',
 						'default' 		=> '',
 						'desc' 			=> 'Width',
 						'prefix'		=> 'px',
 						'tip'			=> 'Set the chat width.',
 					),
-                    
-                    'bg' 			=> array(
+                    'bg' 			    => array(
 						'type'			=> 'color',
 						'default' 		=> '#eeeeee',
 						'desc' 			=> 'Background Color',
 						'tip'			=> 'Set the chat background color.',
 					),
-                    'bubble'    	=> array(
+                    'bubble'    	    => array(
 						'type'			=> 'color',
 						'default' 		=> '#333333',
 						'desc' 			=> 'Chat Color',
 						'tip'			=> 'Set the chat bubble color.',
 					),
-                    'text' 		    => array(
+                    'text' 		        => array(
 						'type'			=> 'color',
 						'default' 		=> '#ffffff',
 						'desc' 			=> 'Text Color',
 						'tip'			=> 'Set the chat text color.',
 					),
-                    'dir'   		=> array(
+                    'dir'   		    => array(
 						'type'			=> 'select',
 						'values' 		=> array(
 							array(
@@ -97,19 +98,19 @@ class chatComponentSettings {
 						'desc' 			=> 'Direction',
 						'tip'			=> 'The direction of the chat bubble.',
 					),
-                    'content' 		=> array(
+                    'content' 		    => array(
 						'type'			=> 'text_area',
 						'default' 		=> 'left',
 						'desc' 			=> 'Content',
 						'tip'			=> 'The content of the chat bubble.',
 					),
-                    'avatar'        => array(
+                    'avatar'            => array(
                         'type'          => 'media_upload',
                         'default'       => '',
                         'desc'          => 'Avatar',
                         'tip'           => 'The avatar for the chat bubble.',
                     ),
-                    'avatar_style'  => array(
+                    'avatar_style'      => array(
                         'type'          => 'select',
                         'values'        => array(
                             array(
@@ -133,9 +134,7 @@ class chatComponentSettings {
 			),
 		);
 
-
 		return array_merge( $shortcodes, $custom );
-
 	}
 }
 new chatComponentSettings;

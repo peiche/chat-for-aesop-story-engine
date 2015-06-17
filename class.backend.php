@@ -1,16 +1,18 @@
 <?php
-
 /**
  *
  *	This file deals with adding our custom component to Aesop Story Engine backend interface
- *	Note: If you're using this sample addon strictly for Lasso and will not require Aesop Story Engine, this file is not needed
+ *
+ *  @package   Chat for Aesop Story Engine
+ *
  */
 class chatComponentBack {
 
-	function __construct(){
-
-		add_action('aesop_admin_styles', 		array($this, 'icon') );
-
+    /**
+     * Add the action to create the styles used by the addon.
+     */
+	function __construct() { 
+		add_action( 'aesop_admin_styles', array( $this, 'icon' ) );
 	}
 	/**
 	 *
@@ -20,15 +22,12 @@ class chatComponentBack {
 	 *  	http://melchoyce.github.io/dashicons/
 	 *
 	 *	Note: expect this to possibly change in the future
-	 *
 	 */
-	function icon(){
+	function icon() {
+		$icon = '\f101'; // CSS code for dashicon.
+		$slug = 'chat'; // Name of component.
 
-		$icon = '\f101'; //css code for dashicon
-		$slug = 'chat'; // name of component
-
-		wp_add_inline_style('ai-core-styles', '#aesop-generator-wrap li.'.$slug.' a:before {content: "'.$icon.'";}');
+		wp_add_inline_style( 'ai-core-styles', '#aesop-generator-wrap li.' . $slug . ' a:before {content: "' . $icon . '";}' );
 	}
-
 }
 new chatComponentBack;

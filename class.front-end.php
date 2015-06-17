@@ -1,12 +1,9 @@
 <?php
-
 class chatComponentFront {
 
-	function __construct(){
-
-		add_action('lasso_toolbar_components', 	array($this,'components_list'));
-		add_filter('lasso_components', 			array($this,'components_available'), 11, 1);
-
+	function __construct() {
+		add_action( 'lasso_toolbar_components',   array( $this, 'components_list' ) );
+		add_filter( 'lasso_components',           array( $this, 'components_available' ), 11, 1 );
 	}
 
 	/**
@@ -15,8 +12,7 @@ class chatComponentFront {
 	 *
 	 *	Note: data-type must match the component slug listed above
 	 */
-	function components_list(){
-
+	function components_list() {
 		?><li data-type="chat" title="Chat"></li><?php
 	}
 
@@ -26,16 +22,16 @@ class chatComponentFront {
 	 *
 	 *
 	 */
-	function components_available($existing){
+	function components_available( $existing ) {
 
 		$components = array(
 			'chat' => array(
 				'name' => 'Image',
-				'content' => self::my_callback()
-			)
+				'content' => self::my_callback(),
+			),
 		);
 
-		return array_merge($existing, $components);
+		return array_merge( $existing, $components );
 
 	}
 
@@ -66,7 +62,7 @@ class chatComponentFront {
 	 *	Create a docs image component ( Dynamic (shortcode) Based )
 	 *
 	 */
-	function my_callback(){
+	function my_callback() {
 		return do_shortcode( '[aesop_chat]' ); // note how this matches L:32 above. 'aesop' is automatically prefixed
 	}
 
