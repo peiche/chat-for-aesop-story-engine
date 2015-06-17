@@ -3,6 +3,11 @@
  *
  *	This class is responsible for creating custom options used by both Aesop Story Engine and Lasso
  *
+ *  @package   Chat for Aesop Story Engine
+ */
+
+/**
+ * Settings definition, used by front- and backend
  */
 class chatComponentSettings {
 
@@ -11,16 +16,18 @@ class chatComponentSettings {
      */
 	function __construct() {
 
-		// if you arent using Lasso then this filter isnt needed
+		// If you arent using Lasso then this filter isn't needed.
 		add_filter( 'lasso_custom_options',   array( $this, 'options' ) );
 
-		// if you arent using aesop story engine then this filter isnt needed
+		// If you arent using aesop story engine then this filter isn't needed.
 		add_filter( 'aesop_avail_components', array( $this, 'options' ) );
 	}
+
 	/**
 	 *
 	 *	This adds our options into the generator for both Lasso and Aesop Story Engine
 	 *
+     *  @param array $shortcodes The shortcodes used by the addon.
 	 */
 	function options( $shortcodes ) {
 

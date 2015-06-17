@@ -4,18 +4,21 @@
  *	This file deals with adding our custom component to Aesop Story Engine backend interface
  *
  *  @package   Chat for Aesop Story Engine
- *
+ */
+
+/**
+ *  Backend component definition
  */
 class chatComponentBack {
 
     /**
-     * Add the action to create the styles used by the addon.
+     *  Create the styles used by the addon.
      */
-	function __construct() { 
+	function __construct() {
 		add_action( 'aesop_admin_styles', array( $this, 'icon' ) );
 	}
+
 	/**
-	 *
 	 *	This appends an inline style right after the aesop admin style sheet
 	 *   It's used for adding in an icon into the generator. It uses dashicons, so refer
 	 *	to the url here to get the code you need
