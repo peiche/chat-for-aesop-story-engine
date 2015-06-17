@@ -1,4 +1,5 @@
-<?php/**
+<?php
+/**
  *
  *	This file deals with adding our custom component to Aesop Story Engine frontend interface
  *
@@ -24,9 +25,7 @@ class ChatComponentFront {
 	 *
 	 *	Note: data-type must match the component slug listed above
 	 */
-	function components_list() {
-		?><li data-type="chat" title="Chat"></li><?php
-	}
+    function components_list() { ?><li data-type="chat" title="Chat"></li><?php }
 
 	/**
 	 *
