@@ -10,25 +10,64 @@
         top: auto;
     }
     
+    // Using clip-path is ideal, but the browser support is woefully lacking.
+    
+    //.aesop-component-chat-direction-left .aesop-component-chat-bubble-arrow,
+    //.aesop-component-chat-direction-right .aesop-component-chat-bubble-arrow {
+    //    border-radius: 50%;
+    //    border-style: solid;
+    //    border-width: 0 20px;
+    //    bottom: 0;
+    //    height: 55px;
+    //    position: absolute;
+    //    width: 70px;
+    //}
+    
+    //.aesop-component-chat-direction-left .aesop-component-chat-bubble-arrow {
+    //    clip-path: inset(24px 0 0 34px);
+    //    margin-right: -21px;
+    //    right: 100%;
+    //}
+    
+    //.aesop-component-chat-direction-right .aesop-component-chat-bubble-arrow {
+    //    clip-path: inset(24px 34px 0 0);
+    //    left: 100%;
+    //    margin-left: -21px;
+    //}
+    
+    // So we'll fake it using pseudo-elements.
+    
     .aesop-component-chat-direction-left .aesop-component-chat-bubble-arrow,
     .aesop-component-chat-direction-right .aesop-component-chat-bubble-arrow {
-        border-radius: 50%;
-        border-style: solid;
-        border-width: 0 20px;
         bottom: 0;
-        height: 55px;
+        height: 27px;
+        overflow: hidden;
         position: absolute;
-        width: 70px;
+        width: 35px;
+        
+        &:before {
+            border-color: inherit;
+            border-radius: 50%;
+            border-style: solid;
+            border-width: 0 20px;
+            bottom: 0;
+            content: '';
+            height: 55px;
+            position: absolute;
+            width: 70px;
+        }
     }
     
     .aesop-component-chat-direction-left .aesop-component-chat-bubble-arrow {
-        clip-path: inset(24px 0 0 34px);
         margin-right: -21px;
         right: 100%;
+        
+        &:before {
+            margin-left: -35px;
+        }
     }
     
     .aesop-component-chat-direction-right .aesop-component-chat-bubble-arrow {
-        clip-path: inset(24px 34px 0 0);
         left: 100%;
         margin-left: -21px;
     }
