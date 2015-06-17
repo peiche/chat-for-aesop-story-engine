@@ -9,7 +9,7 @@
 /**
  * Settings definition, used by front- and backend
  */
-class chatComponentSettings {
+class ChatComponentSettings {
 
     /**
      * Add the options for Lasso (frontend) and Aesop Story Engine (backend)
@@ -144,4 +144,4 @@ class chatComponentSettings {
 		return array_merge( $shortcodes, $custom );
 	}
 }
-new chatComponentSettings;
+new ChatComponentSettings;

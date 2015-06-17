@@ -9,7 +9,7 @@
 /**
  *  Frontend component definition
  */
-class chatComponentFront {
+class ChatComponentFront {
 
     /**
      *  Create the components used by Lasso.
@@ -52,8 +52,8 @@ class chatComponentFront {
 	 *	Create a docs image component ( Dynamic (shortcode) Based )
 	 */
 	function my_callback() {
-		return do_shortcode( '[aesop_chat]' ); // note how this matches L:32 above. 'aesop' is automatically prefixed
+		return do_shortcode( '[aesop_chat]' ); // Note how this matches above. 'aesop' is automatically prefixed.
 	}
 
 }
-new chatComponentFront;
+new ChatComponentFront;

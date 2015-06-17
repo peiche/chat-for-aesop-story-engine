@@ -17,7 +17,7 @@
  * Domain Path:       /languages
  */
 
-class chatComponent {
+class ChatComponent {
 
 	function __construct(){
 
@@ -117,5 +117,5 @@ class chatComponent {
 
 }
 
-new chatComponent;
+new ChatComponent;
 

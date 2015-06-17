@@ -9,7 +9,7 @@
 /**
  *  Backend component definition
  */
-class chatComponentBack {
+class ChatComponentBack {
 
     /**
      *  Create the styles used by the addon.
@@ -33,4 +33,4 @@ class chatComponentBack {
 		wp_add_inline_style( 'ai-core-styles', '#aesop-generator-wrap li.' . $slug . ' a:before {content: "' . $icon . '";}' );
 	}
 }
-new chatComponentBack;
+new ChatComponentBack;

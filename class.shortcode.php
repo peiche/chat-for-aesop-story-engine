@@ -4,10 +4,17 @@
  *	Draws the shorcode component used for Aesop Story Engine
  * 	Note: components in shortcode form not required see class.front-end.php
  *
+ *  @package    Chat for Aesop Story Engine
  */
-class chatComponentSC {
 
-	// the shortcode HAS to start with aesop_
+/**
+ *  Shortcode definition
+ */
+class ChatComponentSC {
+
+	/**
+     *  The shortcode HAS to start with aesop_
+     */
 	function __construct() {
 		add_shortcode( 'aesop_chat',   array( $this, 'shortcode' ) );
 	}
@@ -34,12 +41,12 @@ class chatComponentSC {
 
 		$atts 	= shortcode_atts( $defaults, $atts );
 
-		// account for multiple instances of this component
+		// Account for multiple instances of this component.
 		static $instance = 0;
 		$instance++;
 		$unique = sprintf( 'chat-shortcode-%s-%s', get_the_ID(), $instance );
 
-		// example of getting an option value
+		// Getting option values for output in markup.
 		$style          = $atts[ 'style' ];
         $bg             = $atts[ 'bg' ];
         $width          = $atts[ 'width' ];
@@ -50,9 +57,9 @@ class chatComponentSC {
         $avatar         = $atts[ 'avatar' ];
         $avatar_style   = $atts[ 'avatar_style' ];
         
-        $has_avatar = $avatar != '' ? 'has-avatar' : '';
+        $has_avatar = '' != $avatar ? 'has-avatar' : '';
 
-		// if lasso is active we need to map the sc atts as data-attributes
+		// If lasso is active we need to map the sc atts as data-attributes.
 		if ( class_exists( 'lasso_autoloader' ) && ( function_exists('lasso_user_can') && lasso_user_can() ) ) {
 			$options = function_exists( 'aesop_component_data_atts' ) ? aesop_component_data_atts( 'chat', $unique, $atts ) : false;
 		} else {
@@ -64,4 +71,4 @@ class chatComponentSC {
 		return $out;
 	}
 }
-new chatComponentSC;
+new ChatComponentSC;
