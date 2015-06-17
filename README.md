@@ -10,6 +10,8 @@ Stylized conversation content driven by Aesop Story Engine.
 
 A single chat component is one piece of conversation: one chat bubble. Using a single chat bubble as the building block, any number of chat bubble components can comprise the end result. Short or long, it's completely up to you, the content creator.
 
+Please note that this plugin builds upon existing functionality provided by Aesop Story Engine, and will not function without it.
+
 ##Options
 
 Using the component's built-in options, the chat colors can vary on a post-by-post basis. Multiple conversations in a single post can have varied colors, due to the modular nature of the components.
@@ -36,16 +38,6 @@ Using the component's built-in options, the chat colors can vary on a post-by-po
 
 **Avatar Style** defines the shape of the avatar. By default, it's just a square image. It can be changed to rounded corners (I call this a "squircle") or a circle.
 
-###Required Plugins
-
-####Aesop Story Engine
-
-This plugin builds upon existing functionality provided by [Aesop Story Engine](), and will not function without it.
-
-###Built with Sass
-
-Chat's stylesheet is built using Sass. You’ll find the `/sass` folder in the project, which holds all the components required to compile the stylesheet.
-
 ##Installation
 
 ###Github
@@ -56,10 +48,6 @@ You can download the latest from Github. Follow these steps to activate Cover:
 2. In your admin panel, go to **Appearance > Plugins** and click the **Add New** button.
 3. Click **Upload Plugin** and **Choose File**, then select the plugins's zip file. Click **Install Now**.
 4. Click **Activate**.
-
-##Building
-
-So you want to build the project yourself. Great! Please follow [these directions](building.md).
 
 ##FAQ
 
