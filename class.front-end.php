@@ -1,5 +1,4 @@
-<?php
-/**
+<?php/**
  *
  *	This file deals with adding our custom component to Aesop Story Engine frontend interface
  *

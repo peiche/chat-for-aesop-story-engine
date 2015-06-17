@@ -64,7 +64,7 @@ class ChatComponent {
 		}
 
 	}
-    
+
     /**
 	 * Register the required plugins for this theme.
 	 *
