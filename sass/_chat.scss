@@ -1,0 +1,51 @@
+// Base styles
+
+.aesop-component.aesop-component-chat {
+    padding: 20px 0;
+    
+    + .aesop-component-chat {
+        margin-top: -40px;
+    }
+}
+
+.aesop-component-chat-container {
+    margin: auto;
+    position: relative;
+    
+    .has-avatar & {
+        padding: 0 50px;
+    }
+}
+
+.aesop-component-chat-bubble {
+    display: inline-block;
+    margin: 0 20px;
+    min-height: 50px;
+    padding: 6px 20px;
+    position: relative;
+    text-align: left;
+}
+
+.aesop-component-chat-avatar {
+    background-color: rgba(0, 0, 0, .5);
+    background-size: cover;
+    display: none;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50px;
+    
+    .aesop-component-chat-direction-right + & {
+        left: auto;
+        right: 0;
+    }
+    
+    .has-avatar & {
+        display: block;
+    }
+}
+
+.aesop-component-chat-bubble-arrow {
+    pointer-events: none;
+}

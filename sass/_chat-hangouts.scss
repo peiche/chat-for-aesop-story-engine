@@ -1,0 +1,40 @@
+// Google Hangouts style
+
+.aesop-component-chat.hangouts {
+    .aesop-component-chat-bubble {
+        border-radius: 5px;
+        
+        &.aesop-component-chat-direction-left {
+            border-radius: 0 5px 5px;
+        }
+        
+        &.aesop-component-chat-direction-right {
+            border-radius: 5px 5px 0;
+        }
+    }
+    
+    .aesop-component-chat-direction-left .aesop-component-chat-bubble-arrow,
+    .aesop-component-chat-direction-right .aesop-component-chat-bubble-arrow {
+        border: 10px solid transparent;
+        position: absolute;
+    }
+    
+    .aesop-component-chat-direction-left .aesop-component-chat-bubble-arrow {
+        border-bottom-color: transparent !important;
+        border-left-color: transparent !important;
+        right: 100%;
+        top: 0;
+    }
+    
+    .aesop-component-chat-direction-right .aesop-component-chat-bubble-arrow {
+        border-right-color: transparent !important;
+        border-top-color: transparent !important;
+        bottom: 0;
+        left: 100%;
+    }
+    
+    .aesop-component-chat-direction-right + .aesop-component-chat-avatar {
+        bottom: 0;
+        top: auto;
+    }
+}

@@ -1,0 +1,26 @@
+// Generic chat style
+
+.aesop-component-chat.generic {
+    .aesop-component-chat-bubble {
+        border-radius: 15px;
+    }
+    
+    .aesop-component-chat-direction-left .aesop-component-chat-bubble-arrow,
+    .aesop-component-chat-direction-right .aesop-component-chat-bubble-arrow {
+        border: 10px solid transparent;
+        border-bottom-color: transparent !important;
+        border-top-color: transparent !important;
+        position: absolute;
+        top: 15px;
+    }
+    
+    .aesop-component-chat-direction-left .aesop-component-chat-bubble-arrow {
+        border-left-color: transparent !important;
+        right: 100%;
+    }
+    
+    .aesop-component-chat-direction-right .aesop-component-chat-bubble-arrow {
+        border-right-color: transparent !important;
+        left: 100%;
+    }
+}
