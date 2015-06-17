@@ -3,7 +3,8 @@ Chat for Aesop Story Engine
 
 [![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://github.com/peiche/ase-chat/blob/master/LICENSE.txt)
 [![Build Status](https://travis-ci.org/peiche/ase-chat.svg)](https://travis-ci.org/peiche/ase-chat)
-[![Code Climate](https://d3s6mut3hikguw.cloudfront.net/github/peiche/ase-chat/badges/gpa.svg)](https://codeclimate.com/github/peiche/ase-chat)
+[![Code Climate](https://codeclimate.com/github/peiche/ase-chat/badges/gpa.svg)](https://codeclimate.com/github/peiche/ase-chat)
+
 
 Stylized conversation content driven by Aesop Story Engine.
 
