@@ -20,10 +20,10 @@ class ChatComponentSC {
 	}
 
 	/**
-	 *
 	 *	Components are shortcodes
-	 *
-	 *
+     *
+     *  @param array $atts The settings attributes.
+     *  @param string $content The content of the component.
 	 */
 	function shortcode( $atts, $content = null ) {
 
@@ -47,20 +47,20 @@ class ChatComponentSC {
 		$unique = sprintf( 'chat-shortcode-%s-%s', get_the_ID(), $instance );
 
 		// Getting option values for output in markup.
-		$style          = $atts[ 'style' ];
-        $bg             = $atts[ 'bg' ];
-        $width          = $atts[ 'width' ];
-        $dir            = $atts[ 'dir' ];
-        $bubble         = $atts[ 'bubble' ];
-        $text           = $atts[ 'text' ];
-        $content        = $atts[ 'content' ];
-        $avatar         = $atts[ 'avatar' ];
-        $avatar_style   = $atts[ 'avatar_style' ];
-        
+		$style          = $atts['style'];
+        $bg             = $atts['bg'];
+        $width          = $atts['width'];
+        $dir            = $atts['dir'];
+        $bubble         = $atts['bubble'];
+        $text           = $atts['text'];
+        $content        = $atts['content'];
+        $avatar         = $atts['avatar'];
+        $avatar_style   = $atts['avatar_style'];
+
         $has_avatar = '' != $avatar ? 'has-avatar' : '';
 
 		// If lasso is active we need to map the sc atts as data-attributes.
-		if ( class_exists( 'lasso_autoloader' ) && ( function_exists('lasso_user_can') && lasso_user_can() ) ) {
+		if ( class_exists( 'lasso_autoloader' ) && ( function_exists( 'lasso_user_can' ) && lasso_user_can() ) ) {
 			$options = function_exists( 'aesop_component_data_atts' ) ? aesop_component_data_atts( 'chat', $unique, $atts ) : false;
 		} else {
 			$options = false;

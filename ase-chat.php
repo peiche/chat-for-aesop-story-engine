@@ -17,48 +17,53 @@
  * Domain Path:       /languages
  */
 
+/**
+ *  Initialize plugin.
+ */
 class ChatComponent {
 
-	function __construct(){
+    /**
+     *  Load the required files and settings.
+     */
+	function __construct() {
 
-		define('MY_VERSION', '1.0');
-		define('MY_DIR', plugin_dir_path( __FILE__ ));
-		define('MY_URL', plugins_url( '', __FILE__ ));
+		define( 'MY_VERSION', '1.0' );
+		define( 'MY_DIR', plugin_dir_path( __FILE__ ) );
+		define( 'MY_URL', plugins_url( '', __FILE__ ) );
 
-		require_once(MY_DIR.'class.shortcode.php');
-		require_once(MY_DIR.'class.settings.php');
+		require_once( MY_DIR . 'class.shortcode.php' );
+		require_once( MY_DIR . 'class.settings.php' );
 
-		if ( class_exists('Aesop_Core') )
-			require_once(MY_DIR.'class.backend.php');
+		if ( class_exists( 'Aesop_Core' ) )
+			require_once( MY_DIR . 'class.backend.php' );
 
 		// compatibility aesop front end editor
 		if ( class_exists( 'lasso_autoloader' ) ) {
 
 			//define('LASSO_CUSTOM', true);
-			require_once(MY_DIR.'class.front-end.php');
+			require_once( MY_DIR . 'class.front-end.php' );
 		}
 
-		// optional enqueue js or css
-		add_action('wp_enqueue_scripts', 		array($this,'scripts'));
+		// Enqueue css.
+		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
         
         if ( !class_exists( 'TGM_Plugin_Activation' ) ) {
-			include MY_DIR.'inc/class-tgm-plugin-activation.php';
+			include MY_DIR . 'inc/class-tgm-plugin-activation.php';
 		}
         
-        add_action( 'tgmpa_register',  array( $this,'required_plugins' ));
+        add_action( 'tgmpa_register',  array( $this, 'required_plugins' ) );
         
 	}
 
 	/**
-	*
-	*	Optional add js or css
-	*/
-	function scripts(){
+	 *	Add optional assets
+	 */
+	function scripts() {
 
-		// this handy function checks a post or page to see if your component exists beore enqueueing assets
-		if ( function_exists('aesop_component_exists') && aesop_component_exists('chat') ) {
+		// This handy function checks a post or page to see if your component exists beore enqueueing assets.
+		if ( function_exists( 'aesop_component_exists' ) && aesop_component_exists( 'chat' ) ) {
 
-			wp_enqueue_style('chat-style', MY_URL.'/css/style.css', MY_VERSION ); // chat.css
+			wp_enqueue_style( 'chat-style', MY_URL . '/css/style.css', MY_VERSION );
 			
 		}
 
@@ -67,14 +72,14 @@ class ChatComponent {
     /**
 	 * Register the required plugins for this theme.
 	 *
-	 *	@since 1.0.0
+	 * @since 1.0.0
 	 */
 	function required_plugins() {
 
 	    $plugins = array(
 
 	        array(
-	            'name'      => __('Aesop Story Engine','ase-chat'),
+	            'name'      => __( 'Aesop Story Engine', 'ase-chat' ),
 	            'slug'      => 'aesop-story-engine',
 	            'required'  => false,
 	        ),
