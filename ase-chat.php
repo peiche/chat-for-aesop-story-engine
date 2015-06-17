@@ -1,22 +1,22 @@
 <?php
 
 /**
-* Plugin Name: Chat for Aesop Story Engine
-* Stylized conversation content driven by Aesop Story Engine.
-*
-* @package   Lasso
-* @author    Paul Eiche <peiche@gmail.com>
-* @link      http://eichefam.net/projects/ase-chat
-*
-* Plugin Name:       Chat for Aesop Story Engine
-* Plugin URI:        http://eichefam.net/projects/ase-chat
-* Description:       Stylized conversation content driven by Aesop Story Engine.
-* Version:           1.0.0
-* Author:            Paul Eiche
-* Author URI:        http://eichefam.net
-* Text Domain:       ase-chat
-* Domain Path:       /languages
-*/
+ * Plugin Name: Chat for Aesop Story Engine
+ * Stylized conversation content driven by Aesop Story Engine.
+ *
+ * @package   Lasso
+ * @author    Paul Eiche <peiche@gmail.com>
+ * @link      http://eichefam.net/projects/ase-chat
+ *
+ * Plugin Name:       Chat for Aesop Story Engine
+ * Plugin URI:        http://eichefam.net/projects/ase-chat
+ * Description:       Stylized conversation content driven by Aesop Story Engine.
+ * Version:           1.0.0
+ * Author:            Paul Eiche
+ * Author URI:        http://eichefam.net
+ * Text Domain:       ase-chat
+ * Domain Path:       /languages
+ */
 
 class chatComponent {
 

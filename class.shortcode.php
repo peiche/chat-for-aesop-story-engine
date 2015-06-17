@@ -1,11 +1,11 @@
 <?php
 
 /**
-*
-*	Draws the shorcode component used for Aesop Story Engine
-* 	Note: components in shortcode form not required see class.front-end.php
-*
-*/
+ *
+ *	Draws the shorcode component used for Aesop Story Engine
+ * 	Note: components in shortcode form not required see class.front-end.php
+ *
+ */
 class chatComponentSC {
 
 	// the shortcode HAS to start with aesop_
@@ -14,11 +14,11 @@ class chatComponentSC {
 	}
 
 	/**
-	*
-	*	Components are shortcodes
-	*
-	*
-	*/
+	 *
+	 *	Components are shortcodes
+	 *
+	 *
+	 */
 	function shortcode($atts, $content = null) {
 
 		$defaults = array(

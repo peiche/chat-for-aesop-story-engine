@@ -1,10 +1,10 @@
 <?php
 
 /**
-*
-*	This class is responsible for creating custom options used by both Aesop Story Engine and Lasso
-*
-*/
+ *
+ *	This class is responsible for creating custom options used by both Aesop Story Engine and Lasso
+ *
+ */
 class chatComponentSettings {
 
 	function __construct(){
@@ -16,10 +16,10 @@ class chatComponentSettings {
 		add_filter('aesop_avail_components',	array($this, 'options') );
 	}
 	/**
-	*
-	*	This adds our options into the generator for both Lasso and Aesop Story Engine
-	*
-	*/
+	 *
+	 *	This adds our options into the generator for both Lasso and Aesop Story Engine
+	 *
+	 */
 	function options($shortcodes) {
 
 		$custom = array(
