@@ -22,7 +22,7 @@ class ChatComponentSC {
 	/**
 	 *	Components are shortcodes
      *
-     *  @param array $atts The settings attributes.
+     *  @param array  $atts The settings attributes.
      *  @param string $content The content of the component.
 	 */
 	function shortcode( $atts, $content = null ) {

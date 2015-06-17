@@ -34,25 +34,23 @@ class ChatComponent {
 		require_once( MY_DIR . 'class.shortcode.php' );
 		require_once( MY_DIR . 'class.settings.php' );
 
-		if ( class_exists( 'Aesop_Core' ) )
+        if ( class_exists( 'Aesop_Core' ) ) {
 			require_once( MY_DIR . 'class.backend.php' );
+        }
 
-		// compatibility aesop front end editor
+		// Compatibility aesop front end editor.
 		if ( class_exists( 'lasso_autoloader' ) ) {
-
-			//define('LASSO_CUSTOM', true);
 			require_once( MY_DIR . 'class.front-end.php' );
 		}
 
 		// Enqueue css.
 		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
-        
-        if ( !class_exists( 'TGM_Plugin_Activation' ) ) {
+
+        if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			include MY_DIR . 'inc/class-tgm-plugin-activation.php';
 		}
-        
+
         add_action( 'tgmpa_register',  array( $this, 'required_plugins' ) );
-        
 	}
 
 	/**
@@ -60,11 +58,9 @@ class ChatComponent {
 	 */
 	function scripts() {
 
-		// This handy function checks a post or page to see if your component exists beore enqueueing assets.
+        // This handy function checks a post or page to see if your component exists beore enqueueing assets.
 		if ( function_exists( 'aesop_component_exists' ) && aesop_component_exists( 'chat' ) ) {
-
 			wp_enqueue_style( 'chat-style', MY_URL . '/css/style.css', MY_VERSION );
-			
 		}
 
 	}
@@ -112,8 +108,8 @@ class ChatComponent {
 	            'return'                          => __( 'Return to Required Plugins Installer', 'ase-chat' ),
 	            'plugin_activated'                => __( 'Plugin activated successfully.', 'ase-chat' ),
 	            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'ase-chat' ), // %s = dashboard link.
-	            'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
-	        )
+	            'nag_type'                        => 'updated', // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
+	        ),
 	    );
 
 	    tgmpa( $plugins, $config );
