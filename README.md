@@ -16,7 +16,7 @@ Please note that this plugin builds upon existing functionality provided by Aeso
 
 Using the component's built-in options, the chat colors can vary on a post-by-post basis. Multiple conversations in a single post can have varied colors, due to the modular nature of the components.
 
-![Component screen 1](http://eichefam.net/assets/chat-1.png)
+![Component screen 1](https://raw.githubusercontent.com/peiche/ase-chat/master/assets/screenshot-1.png)
 
 **Appearance** defines the style of chat bubble. There is a default style, but it's not very interesting. There are options to imitate the appearance of chat styles used by Google Hangouts, Facebook Messenger, and iOS Messaging.
 
@@ -28,7 +28,7 @@ Using the component's built-in options, the chat colors can vary on a post-by-po
 
 **Text Color** defines the text color in the chat bubble.
 
-![Component screen 2](http://eichefam.net/assets/chat-2.png)
+![Component screen 2](https://raw.githubusercontent.com/peiche/ase-chat/master/assets/screenshot-2.png)
 
 **Direction** defines where the chat bubble, its arrow, and avatar (optional) come from: left or right.
 
