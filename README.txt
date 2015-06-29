@@ -1,7 +1,7 @@
 === Chat for Aesop Story Engine ===
 Contributors: peiche
 Author URI: http://eichefam.net/
-Plugin URI: http://eichefam.net/projects/ase-chat
+Plugin URI: http://eichefam.net/projects/chat-for-aesop-story-engine
 Donate Link: http://eichefam.net/donate
 Tags: aesop, story, chat
 Requires at least: 3.8

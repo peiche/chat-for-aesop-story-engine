@@ -5,10 +5,10 @@
  *
  * @package   Chat for Aesop Story Engine
  * @author    Paul Eiche <peiche@gmail.com>
- * @link      http://eichefam.net/projects/ase-chat
+ * @link      http://eichefam.net/projects/chat-for-aesop-story-engine
  *
  * Plugin Name:       Chat for Aesop Story Engine
- * Plugin URI:        http://eichefam.net/projects/ase-chat
+ * Plugin URI:        http://eichefam.net/projects/chat-for-aesop-story-engine
  * Description:       Stylized conversation content driven by Aesop Story Engine.
  * Version:           1.0.0
  * Author:            Paul Eiche
@@ -119,4 +119,3 @@ class ChatComponent {
 }
 
 new ChatComponent;
-

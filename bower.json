@@ -1,8 +1,8 @@
 {
-  "name": "ase-chat",
+  "name": "chat-for-aesop-story-engine",
   "version": "1.0.0",
   "description": "Stylized conversation content driven by Aesop Story Engine.",
-  "homepage": "https://github.com/peiche/ase-chat",
+  "homepage": "https://github.com/peiche/chat-for-aesop-story-engine",
   "license": "GNU General Public License v2 or later",
   "devDependencies": {
     "tgm-plugin-activation": "https://github.com/thomasgriffin/TGM-Plugin-Activation/archive/master.zip"

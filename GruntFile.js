@@ -1,14 +1,14 @@
 /*!
  * ASE Chat Gruntfile
- * http://eichefam.net/projects/ase-chat
+ * http://eichefam.net/projects/chat-for-aesop-story-engine
  * @author Paul Eiche
  */
- 
+
 /**
  * Grunt Module
  */
 module.exports = function(grunt) {
-	
+
     grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
         copy: {
@@ -114,7 +114,7 @@ module.exports = function(grunt) {
             }
         }
 	});
-    
+
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -122,11 +122,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-pot');
     grunt.loadNpmTasks('grunt-scss-lint');
-    
+
     grunt.registerTask('build', ['copy', 'sass', 'autoprefixer']);
 	grunt.registerTask('validate', ['scsslint']);
 	grunt.registerTask('default', ['scsslint', 'watch']);
-    
+
     grunt.registerTask('zip', 'Make a zip file for installation.', function() {
         grunt.log.writeln('Zipping up the project.');
         grunt.task.run('compress');
